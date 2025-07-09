@@ -62,17 +62,15 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
 "Through this project, I gained practical experience implementing modern CSS layout techniques, specifically mastering the combination of CSS Grid and Flexbox for creating responsive, dynamic layouts. I deepened my understanding of CSS pseudo-elements, particularly the ::after selector, utilizing it for creating interactive underline animations and decorative elements. This included implementing custom hover effects and managing element positioning through absolute and relative positioning techniques. Additionally, I learned to create fluid layouts that gracefully adapt across different viewport sizes while maintaining design integrity and user experience."
 
 Key technical points covered:
-
-CSS Grid for gallery layouts
-Flexbox for component alignment and responsive containers
-Pseudo-element manipulation for interactive UI elements
-Complex selector patterns
-Responsive design principles
-CSS transitions and animations
+- CSS Grid for gallery layouts
+- Flexbox for component alignment and responsive containers
+- Pseudo-element manipulation for interactive UI elements
+- Complex selector patterns
+- Responsive design principles
+- CSS transitions and animations
 
 ```css
 proud-of-this-css:
