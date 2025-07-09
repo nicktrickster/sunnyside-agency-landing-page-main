@@ -114,7 +114,7 @@ proud-of-this-css:
 
 ## Author
 
-- Frontend Mentor - [@nicktrixter](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@nicktrixter](https://www.frontendmentor.io/profile/nicktrixter)
 
 ## Acknowledgments
 
