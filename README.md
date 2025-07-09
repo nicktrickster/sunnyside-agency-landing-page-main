@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/nicktrickster/sunnyside-agency-landing-page-main]
+- Solution URL: [https://github.com/nicktrixster/sunnyside-agency-landing-page-main]
 - Live Site URL: [https://sunnyside-agency-page-solution.netlify.app/]
 
 ## My process
