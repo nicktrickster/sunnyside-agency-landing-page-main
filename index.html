@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link href="https://fonts.googleapis.com/css?family=Barlow:400,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fraunces:700,900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Sunnyside agency landing page</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    body {
+      font-family: 'Barlow', sans-serif;
+      font-size: 18px;
+      background-color: hsl(30, 38%, 92%);
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    h1,
+    h3 {
+      font-family: "Fraunces", serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      font-family: 'Barlow', sans-serif;
+      font-size: 1rem;
+      color: hsl(0, 0%, 0%);
+      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      color: hsl(228, 45%, 44%);
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .logo {
+      width: 150px;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+      padding: 10px 0;
+    }
+
+    nav ul li a {
+      color: hsl(0, 0%, 0%);
+    }
+
+    .mobile-menu-icon {
+      background: none;
+      border: none;
+      display: none;
+    }
+
+    .mobile-menu-icon img {
+      width: 32px;
+      height: 32px;
+    }
+
+    .hero {
+      text-align: center;
+      background-image: url('./images/desktop/image-header.jpg');
+      background-size: cover;
+      background-position: center;
+      color: hsl(0, 0%, 0%);
+      height: 600px;
+    }
+
+    .hero h1 {
+      font-family: "Fraunces", serif;
+      font-weight: 900;
+      font-size: 3rem;
+      text-transform: uppercase;
+      color: hsl(0, 0%, 100%);
+      margin-top: 20px;
+      letter-spacing: 0.2em;
+    }
+
+    .scroll-arrow {
+      width: 30px;
+      margin-top: 120px;
+      animation: bounce 2s infinite;
+    }
+
+    .contact {
+      background-color: hsl(0, 0%, 100%);
+      border-radius: 27px;
+      color: hsl(0, 0%, 0%);
+      font-family: "Fraunces", serif;
+      font-weight: bold;
+      padding: 10px;
+      text-transform: uppercase;
+    }
+
+    .contact a {
+      color: hsl(0, 0%, 0%);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    .hero a:hover {
+      text-decoration: underline;
+    }
+
+    .transform-section,
+    .standout-section {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .tranform-col1 {
+      flex: 1;
+      text-align: left;
+    }
+
+    .tranform-col2 {
+      flex: 1;
+      background-image: url("./images/desktop/image-transform.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 600px;
+    }
+
+    .standout-col1 {
+      flex: 1;
+      background-image: url('./images/desktop/image-stand-out.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      height: 600px;
+    }
+
+    .standout-col2 {
+      flex: 1;
+      text-align: left;
+    }
+
+    .tranform-col1 p,
+    .tranform-col1 a,
+    .standout-col2 p,
+    .standout-col2 a {
+      padding: 5px 100px;
+    }
+
+    .tranform-col1 h1,
+    .standout-col2 h1 {
+      padding: 5px 100px;
+      font-size: 2rem;
+      color: hsl(0, 0%, 0%);
+      margin-bottom: 20px;
+    }
+
+    .tranform-col1 p,
+    .standout-col2 p {
+      font-size: 14px;
+      color: hsl(0, 0%, 0%);
+      line-height: 1.5;
+    }
+
+    .tranform-col1 a,
+    .standout-col2 a {
+      display: inline-block;
+      color: hsl(0, 0%, 0%);
+      text-transform: uppercase;
+      font-family: "Fraunces", serif;
+      font-size: 14px;
+      font-weight: bold;
+      text-decoration: none;
+      position: relative;
+      padding: 0 100px;
+      margin-top: 20px;
+    }
+
+    .tranform-col1 a::after,
+    .standout-col2 a::after {
+      content: '';
+      position: absolute;
+      left: 95px;
+      right: 95px;
+      bottom: 1px;
+      height: 5px;
+      border-radius: 12px;
+      z-index: -1;
+      transition: height 0.3s ease;
+    }
+
+    .tranform-col1 a::after {
+      background-color: hsl(51, 100%, 49%);
+    }
+
+    .standout-col2 a::after {
+      background-color: hsl(7, 99%, 70%);
+    }
+
+    .tranform-col1 a:hover::after,
+    .standout-col2 a:hover::after {
+      height: 6px;
+    }
+
+    .tranform-col1 img,
+    .standout-col2 img {
+      width: 675px;
+      height: auto;
+    }
+
+    .full-section {
+      display: flex;
+      justify-content: space-between;
+      background-color: hsl(30, 38%, 92%);
+    }
+
+    .left-full-col,
+    .right-full-col {
+      box-sizing: border-box;
+      padding: 280px 160px;
+      width: 50%;
+    }
+
+    .left-full-col {
+      background-image: url('./images/desktop/image-graphic-design.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .right-full-col {
+      background-image: url('./images/desktop/image-photography.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .left-full-col h1,
+    .right-full-col h1 {
+      font-size: 2rem;
+      color: hsl(0, 0%, 0%);
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-align: center;
+      padding: 0 110px;
+    }
+
+    .left-full-col p,
+    .right-full-col p {
+      font-size: 14px;
+      color: hsl(0, 0%, 0%);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      text-align: center;
+      padding: 0 110px;
+    }
+
+    .left-full-content,
+    .right-full-content {
+      padding: 20px;
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+    }
+
+    .left-full-col,
+    .right-full-col {
+      position: relative;
+    }
+
+    .client-testimonials {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0px 160px 100px;
+      text-align: center;
+    }
+
+    .client-testimonials p {
+      font-size: 14px;
+      color: hsl(0, 0%, 0%);
+      line-height: 1.5;
+      margin-bottom: 20px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .testimonial-title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: hsl(210, 4%, 67%);
+      background-color: hsl(30, 38%, 92%);
+      padding: 100px 160px 50px;
+    }
+
+    .testimonial-title h1 {
+      color: hsl(0, 0%, 0%);
+      text-transform: uppercase;
+    }
+
+    .testimonial-col {
+      flex: 1 1 30%;
+      margin: 0 10px;
+      box-sizing: border-box;
+      border-radius: 10px;
+      padding: 30px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 350px;
+    }
+
+    .testimonial-col img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 40px;
+    }
+
+    .client-name {
+      font-family: "Fraunces", serif;
+      font-size: 1rem;
+      font-weight: bold;
+      color: hsl(0, 0%, 0%);
+      margin-top: 10px;
+    }
+
+    .client-title {
+      color: hsl(210, 4%, 67%);
+      font-size: 0.875rem;
+      margin-top: 5px;
+    }
+
+    .gallery-section {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    .gallery-section img {
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+      display: block;
+      object-fit: cover;
+    }
+
+    .footer {
+      background-color: hsl(167, 44%, 70%);
+      padding: 100px 160px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer .logo {
+      width: 150px;
+      margin-bottom: 25px;
+      color: hsl(167, 34%, 41%);
+      filter: invert(67%) sepia(16%) saturate(598%) hue-rotate(118deg) brightness(88%) contrast(85%);
+    }
+
+    .footer nav ul li {
+      display: inline;
+    }
+
+    .footer nav ul li a {
+      color: hsl(167, 40%, 24%);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .footer nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .footer a {
+      color: hsl(0, 0%, 0%);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .social-media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 60px;
+    }
+
+    .social-media a {
+      margin: 0 10px;
+    }
+
+    .attribution {
+      margin: 60px 0 0;
+      text-align: center;
+      font-size: 0.75rem;
+      color: hsl(228, 45%, 44%);
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+      text-decoration: none;
+    }
+
+    .attribution a:hover {
+      text-decoration: underline;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      html,
+      body {
+        overflow-x: hidden;
+        width: 100vw;
+      }
+
+      .header {
+        margin-left: 10px;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .hero {
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        margin-top: 50px;
+        padding: 0 20px;
+        letter-spacing: 0.1em;
+      }
+
+      .header nav ul {
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        padding: 20px 40px;
+        z-index: 100;
+      }
+
+      .mobile-menu-icon {
+        display: block !important;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 200;
+      }
+
+      .scroll-arrow {
+        margin-top: 10px;
+      }
+
+      .transform-section,
+      .standout-section,
+      .full-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .left-full-col,
+      .right-full-col {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .left-full-col h1,
+      .right-full-col h1 {
+        padding: 0 20px;
+        text-align: center;
+      }
+
+      .tranform-col1,
+      .standout-col2 {
+        padding-top: 100px;
+      }
+
+      .tranform-col1,
+      .tranform-col2,
+      .standout-col1,
+      .standout-col2 {
+        flex: unset;
+        width: 100%;
+      }
+
+      .tranform-col1,
+      .standout-col2 {
+        height: 350px;
+      }
+
+      .tranform-col1 {
+        order: 2;
+      }
+
+      .tranform-col2 {
+        order: 1;
+      }
+
+      .tranform-col1 h1,
+      .standout-col2 h1,
+      .tranform-col1 p,
+      .standout-col2 p{
+        padding: 5px 100px;
+        text-align: center;
+      }
+
+      .tranform-col1 a,
+      .standout-col2 a {
+        padding: 5px 100px;
+        text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+    .tranform-col1 a::after,
+    .standout-col2 a::after {
+        left: 205px;
+        right: 205px;
+        bottom: 5px;
+      }
+
+
+      .testimonial-title {
+        padding: 100px 0px 0px;
+      }
+
+      .client-testimonials {
+        flex-direction: column;
+        align-items: center;
+        padding: 0 20px 100px;
+      }
+
+      .gallery-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 375px) {
+
+      html,
+      body {
+        font-size: 16px;
+        padding: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        padding: 0 15px;
+        letter-spacing: 0.05em;
+      }
+
+      .scroll-arrow {
+        margin-top: 10px;
+      }
+
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+        background: white;
+        padding: 10px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      nav ul li {
+        text-align: left;
+      }
+
+      .mobile-menu-icon {
+        position: relative;
+        margin-bottom: 10px;
+      }
+
+      .transform-section,
+      .standout-section,
+      .full-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+      }
+
+      .tranform-col1,
+      .tranform-col2,
+      .standout-col1,
+      .standout-col2 {
+        width: 100%;
+        text-align: center;
+      }
+
+      .tranform-col1 h1,
+      .standout-col2 h1 {
+        font-size: 1.8rem;
+        padding: 0 15px;
+      }
+
+      .tranform-col1 p,
+      .standout-col2 p {
+        font-size: 14px;
+        padding: 0 10px;
+      }
+
+      .client-testimonials {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+      }
+
+      .testimonial-col {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      .gallery-section {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      .footer {
+        padding: 50px 15px;
+        text-align: center;
+      }
+
+      .footer nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .social-media a {
+        margin: 0 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="hero">
+      <div class="header">
+        <img src="./images/logo.svg" alt="Sunnyside Agency Logo" class="logo">
+        <nav>
+          <ul>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li class="contact"><a href="#">Contact</a></li>
+          </ul>
+          <!-- Mobile menu icon (hamburger) -->
+          <button class="mobile-menu-icon" aria-label="Open menu" attribute="aria-expanded" aria-controls="mobile-menu">
+            <img src="./images/icon-hamburger.svg" alt="Menu">
+          </button>
+        </nav>
+        <script>
+          // Mobile menu toggle
+          const menuIcon = document.querySelector('.mobile-menu-icon');
+          const navList = document.querySelector('.header nav ul');
+          menuIcon.addEventListener('click', () => {
+            navList.style.display = navList.style.display === 'flex' ? 'none' : 'flex';
+          });
+          // Show/hide icon based on screen width
+          function handleResize() {
+            if (window.innerWidth <= 768) {
+              menuIcon.style.display = 'block';
+              navList.style.display = 'none';
+            } else {
+              menuIcon.style.display = 'none';
+              navList.style.display = 'flex';
+            }
+          }
+          window.addEventListener('resize', handleResize);
+          window.addEventListener('DOMContentLoaded', handleResize);
+        </script>
+      </div>
+      <h1>We are creatives</h1>
+      <img src="./images/icon-arrow-down.svg" alt="Scroll down arrow" class="scroll-arrow">
+    </div>
+
+    <div class="transform-section">
+      <div class="tranform-col1">
+        <h1>Transform your brand</h1>
+        <p>We are a full-service creative agency specializing in helping brands grow fast.
+          Engage your clients through compelling visuals that do most of the marketing for you.</p>
+        <a href="">Learn more</a>
+      </div>
+
+      <div class="tranform-col2">
+      </div>
+    </div>
+
+    <div class="standout-section">
+      <div class="standout-col1">
+      </div>
+
+      <div class="standout-col2">
+        <h1>Stand out to the right audience</h1>
+        <p>Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters,
+          we’ll build and extend your brand in digital places.</p>
+        <a href="">Learn more</a>
+      </div>
+    </div>
+
+    <div class="full-section">
+      <div class="left-full-col">
+        <div class="left-full-content">
+          <h1>Graphic design</h1>
+          <p> Great design makes you memorable. We deliver artwork that underscores your brand message and captures
+            potential
+            clients’ attention.</p>
+        </div>
+      </div>
+
+      <div class="right-full-col">
+        <div class="right-full-content">
+          <h1>Photography</h1>
+          <p>Increase your credibility by getting the most stunning, high-quality photos that improve your business
+            image.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="testimonial-title">
+      <h3>Client testimonials</h3>
+    </div>
+
+    <div class="client-testimonials">
+      <div class="testimonial-col">
+        <img src="./images/image-emily.jpg" alt="Emily R.">
+        <p>We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
+          hit.
+        </p>
+        <span class="client-name">Emily R. </span>
+        <span class="client-title">Marketing Director</span>
+      </div>
+
+      <div class="testimonial-col">
+        <img src="./images/image-thomas.jpg" alt="Thomas S.">
+        <p>Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
+          enjoyable experience.</p>
+        <span class="client-name">Thomas S.</span>
+        <span class="client-title">Chief Operating Officer</span>
+      </div>
+
+      <div class="testimonial-col">
+        <img src="./images/image-jennie.jpg" alt="Jennie F.">
+        <p>Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!</p>
+        <span class="client-name">Jennie F. </span>
+        <span class="client-title">Business Owner</span>
+      </div>
+    </div>
+
+    <div class="gallery-section">
+      <img src="./images/desktop/image-gallery-milkbottles.jpg" alt="Gallery Image 1">
+      <img src="./images/desktop/image-gallery-orange.jpg" alt="Gallery Image 2">
+      <img src="./images/desktop/image-gallery-cone.jpg" alt="Gallery Image 3">
+      <img src="./images/desktop/image-gallery-sugarcubes.jpg" alt="Gallery Image 4">
+    </div>
+
+    <div class="footer">
+      <img src="./images/logo.svg" alt="Sunnyside Agency Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Projects</a></li>
+        </ul>
+      </nav>
+
+      <span class="social-media">
+        <a href="#"><img src="./images/icon-facebook.svg" alt="Facebook"></a>
+        <a href="#"><img src="./images/icon-instagram.svg" alt="Instagram"></a>
+        <a href="#"><img src="./images/icon-twitter.svg" alt="Twitter"></a>
+        <a href="#"><img src="./images/icon-pinterest.svg" alt="Pinterest"></a>
+      </span>
+
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener">Frontend
+          Mentor</a>.
+        Coded by <a href="#">nicktrixter</a>.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
